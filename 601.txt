@@ -1,0 +1,9 @@
+a. Name of Institute:
+    
+    XPath Query: /secondary-school/name
+
+b. School Website:
+
+    XPath Query: /secondary-school/web
+
+c. 
