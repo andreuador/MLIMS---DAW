@@ -1,0 +1,9 @@
+<!ELEMENT secondary-school (name,web,cycles)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT web (#PCDATA)>
+<!ELEMENT cycles (cycle+)>
+<!ELEMENT cycle (name,grade,decreeTitle)>
+<!ATTLIST cycle id NMTOKEN #REQUIRED>
+<!ELEMENT grade (#PCDATA)>
+<!ELEMENT decreeTitle EMPTY>
+<!ATTLIST decreeTitle year NMTOKEN #REQUIRED>
