@@ -1,0 +1,28 @@
+a. Name of Institute:
+    
+    //secondary/name
+
+b. School Website:
+
+    //web/text()
+
+c. Name of Training Cycles
+    //cycle/name/text()
+    
+d. Acronyms by which the Formative Cycles ara know
+    //cycle/@*
+    
+e. Years in which the title decrees of the Formative Cycle were published
+    //@year
+    
+f. Intermediate Training Cycles (it is about obtaining the complete element)
+    //cycle[grade="Intermediate"]
+    
+g. Name of Higher Level Training Cycles
+    //name[../grade="Higher"]
+    
+h. Name of Training cycles prior to 2010
+    //name[../decreeTitle/@year < 2010]/text()
+    
+i. Name of Training Cycles of 2008 or 2010
+    //name[../decreeTitle/@year="2008 or ../decreeTitle/@year=2010]/text()
