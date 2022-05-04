@@ -1,6 +1,6 @@
 <html>
 <body>
-  <h1 align="center">Book List</h1>
+  <h1>Book List</h1>
   <table border="1">
     <tr>
       <th>Title</th>
