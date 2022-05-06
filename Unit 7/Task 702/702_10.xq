@@ -1,25 +1,32 @@
-let $total := in collection(Bookstore)/bookstore/book
-return
-<html>
-  <body>
-    <table border="1">
+let $books := collection(Bookstore)//book[@category = "web"]
+  return
+   <html>
+      <body>
+      <table>
       <tr>
-        <th>Title</th>
-        <th>Price</th>
+        <td>Title</td>
+        <td>Author</td>
+        <td>Price</td>
       </tr>
       {
-        for $x in collection(Bookstore)/bookstore/book
-        where $x/@price
-        return
-        <tr>
-          <td>{$x/title}</td>
-          <td>{$x/@price}</td>
-        </tr>
-      }
+    for $b in $books
+      return 
+     
       <tr>
-        <td>Total price</td>
-        <td>{sum($x/price)}</td>
+        <td>{data($b/title)}</td>
+        <td>{data($b/author)}</td>
+        <td>{data($b/@price) || data($b/price)}</td>
       </tr>
-    </table>
-  </body>
+    }
+    {
+      let $price := sum($books/@price)
+      let $price2 := sum($books/price)
+      
+      return
+      <tr>
+        <td>{$price + $price2}</td>
+      </tr>
+    }
+</table>
+</body>
 </html>
